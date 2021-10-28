@@ -11,18 +11,16 @@ Please follow the instructions below and fill in the information requested when 
 
 |               | Information   |
 |:-------------:|:-------------:|
-| Student Name  | name-here     |
-| Student ID    | id-here       |
-| Student Email | email-here    |
+| Student Name  | Esau Bojorquez Medina    |
+| Student ID    | 921207336       |
+| Student Email | ebojorquezmedina@mail.sfsu.edu    |
 
 
 
 # Build/Run Instructions
 
 ## Build Instructions
-1. steps here
-2. steps here
+1. npm install
 
 ## Run Instructions
-1. steps here
-2. steps here 
+1. npm start
