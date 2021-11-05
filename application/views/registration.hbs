@@ -1,0 +1,69 @@
+<div class="site-content">
+    <header>
+        <h1 class="neonText">Registration Form</h1>
+    </header>
+
+    <form action="">
+        <fieldset>
+
+            <label for="">Username</label>
+            <br />
+            <input id="userName" type="text">
+
+
+            <br />
+            <div class="spacing"></div>
+            <label for="">Email</label>
+            <br />
+            <input type="email" required>
+
+
+            <br />
+            <div class="spacing"></div>
+            <label for="">Password</label>
+            <br />
+            <input id="password" type="password">
+
+
+            <br />
+            <div class="spacing"></div>
+            <label for="">Confirm Password</label>
+            <br />
+            <input id="conPassword" type="password">
+
+
+
+            <br />
+
+            <label for="">Are you 13 years old or older?</label>
+            <input type="checkbox" required>
+
+
+            <br />
+
+            <label for="">
+                Do you accept the
+                <a class="neonText" href="https://theuselessweb.com/" target="_blank">TOS & Privacy rules</a>
+                ?
+            </label>
+            <input type="checkbox" required>
+
+
+            <br />
+
+            <button id="subButton" type="submit" onclick="return reg()">Register</button>
+            <button type="reset">Reset</button>
+        </fieldset>
+    </form>
+
+    <div class="spacing"></div>
+
+</div>
+<div id="rsidebar" class="rsite-sidebar">
+    <div id="requirments" class="hidden">
+        <p id="userChecker" class="hidden"> User Name Format</p>
+        <p id="passChecker" class="hidden">Passwords match & <br> Format</p>
+    </div>
+
+
+</div>

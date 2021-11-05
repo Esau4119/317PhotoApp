@@ -1,0 +1,414 @@
+body{
+  
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: linear-gradient(#000000, #271347);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+a:link {
+    text-decoration: none;
+  }
+  .spacing{
+      padding-top:10px;
+    
+  }
+textarea{
+    background-color: transparent;
+    border-color: rebeccapurple;
+    color: white;
+    border-radius: 25px;
+    text-align: center;
+
+}
+.neonText {
+    color: rgb(255, 255, 255);
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px rgb(180, 179, 179),
+      0 0 21px rgb(204, 204, 204),
+      0 0 42px rgb(155, 27, 206),
+      0 0 82px rgb(155, 27, 206),
+      0 0 92px rgb(155, 27, 206),
+      0 0 102px rgb(155, 27, 206),
+      0 0 130px rgb(155, 27, 206);
+     
+  }
+
+  label{
+    color: #fff;
+    
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px rgb(180, 179, 179),
+      0 0 21px rgb(204, 204, 204),
+      0 0 42px rgb(155, 27, 206),
+      0 0 82px rgb(155, 27, 206),
+      0 0 92px rgb(155, 27, 206),
+      0 0 102px rgb(155, 27, 206),
+      0 0 121px rgb(155, 27, 206);
+
+    }
+
+
+  input{
+
+    
+    background-color: transparent;
+    color: white;
+    border-radius: 25px;
+    height: auto;
+    border: 2px solid rebeccapurple;
+    margin-top: 10px;
+ 
+  }
+  input[type="file"]::file-selector-button{
+ 	border: 2px solid rebeccapurple;
+	color: rebeccapurple;
+	width: auto;
+    padding: 4px;
+	border-radius: 25px;
+	background-color:transparent;
+      
+  }
+   
+
+  button{
+
+    margin-top: 10px;
+    background-color: transparent;
+    color: white;
+    border-radius: 25px;
+    height: auto;
+    width: auto;
+    border: 2px solid rebeccapurple;
+ 
+  }
+  button[id = "FAKEAPIBUTTON"]{
+    width: 1000px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    background-color: transparent;
+    color: white;
+    border-radius: 25px;
+    height: auto;
+    border: 2px solid rebeccapurple;
+    
+  }
+.shadow{
+    border: 1px solid #cccc;
+    box-shadow:
+    0 0 7px #fff,
+    0 0 10px rgb(180, 179, 179),
+    0 0 42px rgb(155, 27, 206),
+    0 0 70px rgb(155, 27, 206);;
+    text-align: center;
+
+
+}
+.expand-on-focus {
+    padding: 5px;
+    width: 100px;
+    transition: all .5s ease;
+    align-self: center;
+}
+
+.expand-on-focus:focus {
+    width: 150px;
+    padding: 5px;
+    
+}
+
+
+.expand-on-hover {
+    padding: 5px;
+    width: 60px;
+    transition: all .5s ease;
+    align-self: center;
+}
+
+.expand-on-hover:hover {
+    width: 100px;
+    padding: 5px;
+    background-color: rebeccapurple;
+    border: 2px solid rebeccapurple;
+}
+  
+
+
+fieldset{
+    background-color: transparent;
+    color: white;
+    border-radius: 25px;
+    height: auto;
+    border: 2px solid rebeccapurple;
+}
+
+
+
+nav{
+    display: flex;
+}
+nav > a{
+    flex: 1 1 auto;
+    
+}
+
+.grid-container{
+
+display: grid;
+height: 80vh;
+width: 100vh;
+margin: 50px auto auto auto;
+grid-template-rows: repeat(4,1fr);
+grid-template-columns:  repeat(5,1fr);
+grid-auto-rows: 1fr;
+grid-auto-columns: 1fr;
+gap: .25rem;
+grid-template-areas: 
+" header header header header header "
+"lsidebar content content content rsidebar"
+"lsidebar content content content rsidebar"
+"lsidebar content content content rsidebar"
+"footer footer footer footer footer"
+;
+}
+.grid-container-viewPost{
+    display: grid;
+    height: 80vh;
+    width: 100vh;
+    margin: 50px auto auto auto;
+    grid-template-rows: repeat(4,1fr);
+    grid-template-columns:  repeat(5,1fr);
+    grid-auto-rows: 1fr;
+    grid-auto-columns: 1fr;
+    gap: .25rem;
+    grid-template-areas: 
+    " header header header header header "
+    "lsidebar lsidebar content content content"
+    "lsidebar lsidebar content content content"
+    "lsidebar lsidebar content content content"
+    "footer footer footer footer footer"
+    ;
+    }
+    .grid-container-home{
+
+        display: grid;
+        min-height: 80vh;
+        min-width: 100vh;
+        height: auto;
+        width: auto;
+        margin: 50px auto auto auto;
+        grid-template-rows: 100px repeat(3,1fr);
+        grid-template-columns:  repeat(5,1fr);
+        grid-auto-rows:  5fr;
+        grid-auto-columns: 2fr;
+        gap: .25rem;
+        grid-template-areas: 
+        
+        " header header header header header "
+        "content content content content content"
+        "content content content content content"
+        "content content content content content"
+        "content content content content content"
+        ;
+        }
+        #container-for-all-of-the-fake-api-pictures-and-titles-that-are-probrably-in-a-different-language{
+            width: auto;
+            margin-left: auto;
+            padding-left: 6px;
+            padding-right: 8px;
+            display: grid;
+            gap: 12px 12px;
+            justify-items: center;
+            grid-template-columns: repeat(4, 300px);
+            grid-template-rows: repeat(4, 250px);
+            grid-auto-columns:  300px 300px 300px 300px ;
+            grid-auto-rows: 250px 250px 250px 250px;
+        }
+.image{
+    height: 300px;
+    border: 2px solid rebeccapurple; ;
+    box-shadow:
+    0 0 7px #fff,
+    0 0 10px rgb(180, 179, 179),
+    0 0 42px rgb(155, 27, 206),
+    0 0 4px rgb(155, 27, 206);
+
+
+
+}
+.site-header{
+    background-color: transparent;
+    border-bottom-color: white;
+    text-align: center;
+    grid-area: header;
+ 
+}
+.lsite-sidebar{
+    color: white;
+    background-color: transparent;
+    grid-area: lsidebar;
+    text-align: center;
+}
+.rsite-sidebar{
+    background-color: transparent ;
+    color: white;
+    grid-area: rsidebar;
+    text-align: center;
+}
+.site-content{
+    border: transparent;
+    box-shadow: black;
+    background-color: transparentlack;
+    align-content: center;
+    grid-auto-rows:  repeat(4,1fr);
+        grid-auto-columns:repeat(5,1fr);
+    grid-area: content;
+}
+.site-content-home{
+    border: transparent;
+    box-shadow: black;
+    background-color: transparentlack;
+    justify-content: center;
+    grid-area: content;
+}
+.site-footer{
+    color: white;
+    background-color: transparent;
+    grid-area: footer;
+    text-align: center;
+}
+.nav-bar-border{
+    border: 2px solid rebeccapurple;
+    height: auto;
+    border-right: black;
+    border-left: black;
+
+}
+
+
+@media screen and (max-width:500px){
+    .grid-container{
+        grid-template-rows: repeat(5,1fr);
+        grid-template-columns:  repeat(3,1fr);
+        gap: .15rem;
+        grid-template-areas: 
+        "header header header"
+        "content content content"
+        "lsidebar content content"
+        "lsidebar lsidebar lsidebar"
+        "rsidebar rsidebar rsidebar"
+        "footer footer footer";
+
+
+    }
+    .grid-container-viewPost{
+        grid-template-rows: repeat(5,1fr);
+        grid-template-columns:  repeat(3,1fr);
+        gap: .15rem;
+        grid-template-areas: 
+        "header header header"
+        "lsidebar lsidebar lsidebar"
+        "content content content"
+        "content content content"
+        "rsidebar rsidebar rsidebar"
+        "footer footer footer";
+
+
+    }
+    .image{
+        height: auto;
+    }
+
+
+}
+
+@media screen and (max-width:350px){
+    body{
+        background-color: black;
+    }
+    .grid-container{
+        grid-template-rows: repeat(5,1fr);
+        grid-template-columns:  repeat(1,1fr);
+        gap: .15rem;
+        grid-template-areas: 
+        "header"
+        "lsidebar"
+        "content"
+        "rsidebar"
+        "footer";
+
+    }
+    .grid-container-viewPost{
+        grid-template-rows: repeat(5,1fr);
+        grid-template-columns:  repeat(1,1fr);
+        gap: .15rem;
+        grid-template-areas: 
+        "header"
+        "lsidebar"
+        "content"
+        "rsidebar"
+        "footer";
+
+    }
+    .image{
+        height: auto;
+    }
+
+
+}
+.requirments{
+    background-color: transparent;
+    margin-top: 190px;
+    color: white;
+    border-radius: 25px;
+    height: auto;
+    border: 2px solid rebeccapurple;
+
+
+}
+.hidden{
+    color: transparent;
+}
+.good{
+    color: greenyellow;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px rgb(180, 179, 179),
+      0 0 21px rgb(204, 204, 204),
+      0 0 42px rgb(79, 204, 30),
+      0 0 82px rgb(79, 204, 30),
+      0 0 92px rgb(79, 204, 30),
+      0 0 102px rgb(79, 204, 30),
+      0 0 130px rgb(79, 204, 30);
+}
+.not-Good{
+    color: red;
+    text-shadow:
+     
+      0 0 10px rgb(180, 179, 179),
+      0 0 15px rgb(180, 179, 179),
+      0 0 42px rgb(255, 0, 0),
+      0 0 82px rgb(255, 0, 0),
+      0 0 92px rgb(255, 0, 0),
+      0 0 102px rgb(255, 0, 0),
+      0 0 130px rgb(255, 0, 0);
+}
+.bor{
+    background-color: transparent;
+   
+    color: white;
+    border-radius: 25px;
+    height: auto;
+    padding-top:  5px;
+    width: 300px;
+    border: 2px solid rebeccapurple;
+
+
+}
