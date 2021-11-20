@@ -3,33 +3,33 @@
         <h1 class="neonText">Registration Form</h1>
     </header>
 
-    <form action="">
+    <form  method="POST" action="/users/register" enctype="application/x-www-form-urlencoded">
         <fieldset>
 
             <label for="">Username</label>
             <br />
-            <input id="userName" type="text">
+            <input id="userName" type="text" name= "username" required>
 
 
             <br />
             <div class="spacing"></div>
             <label for="">Email</label>
             <br />
-            <input type="email" required>
+            <input id = "email" type="email" name= "email" required >
 
 
             <br />
             <div class="spacing"></div>
             <label for="">Password</label>
             <br />
-            <input id="password" type="password">
+            <input id="password" type="password" name= "password" required>
 
 
             <br />
             <div class="spacing"></div>
             <label for="">Confirm Password</label>
             <br />
-            <input id="conPassword" type="password">
+            <input id="conPassword" type="password" name="cpassword" required>
 
 
 
@@ -63,6 +63,7 @@
     <div id="requirments" class="hidden">
         <p id="userChecker" class="hidden"> User Name Format</p>
         <p id="passChecker" class="hidden">Passwords match & <br> Format</p>
+        <p id="emailChecker" class="hidden"> Email</p>
     </div>
 
 

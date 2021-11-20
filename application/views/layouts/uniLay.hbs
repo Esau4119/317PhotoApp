@@ -1,30 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    
 
-    <head>
+<head>
+
+
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type = "text/css" href="/public/css/form.css">
-    
+    <link rel="stylesheet" type="text/css" href="/public/css/second.css">
+
     <script defer src="/public/js/validation.js"></script>
+     <script defer src="/public/js/fadeoutmessage.js"></script>
     <title>{{title}}</title>
     <link rel="icon" href="/public/favicon.ico" sizes="70x70" type="image/ico">
     <style>
 
 
     </style>
-</head>
   </head>
-  <body>
-    
-    <div class = "grid-container shadow">
+</head>
+
+<body>
+
+  <div class="grid-container shadow">
+    {{!-- {{log this}} --}}
     {{> header}}
+     {{#if (emptyObject messages)}}
+    {{> flashmessage}}
+     {{/if}}
     {{{body}}}
-  {{> footer}}
-    </div>
-   
-  </body>
+    {{> footer}}
+  </div>
+
+  {{#if logged}}
+  <script>
+    let ele = document.getElementById('logout-button')
+    if (ele) {
+      ele.onclick = (even) => {
+        fetch('/users/logout', { method: "POST" })
+          .then((data) => {
+            location.replace('/');
+          })
+
+      }
+    }
+  </script>
+  {{/if}}
+
+</body>
+
 </html>

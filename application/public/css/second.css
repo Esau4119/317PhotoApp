@@ -3,7 +3,7 @@ body{
     margin:0;
     padding:0;
     font-family: sans-serif;
-    background: linear-gradient(#000000, #271347); 
+    background: linear-gradient(#1f0f22, #271347); 
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -27,31 +27,25 @@ textarea{
 
 }
 .neonText {
-    color: rgb(255, 255, 255);
+    color: rgb(255, 233, 255);
     text-shadow:
-      0 0 7px #fff,
-      0 0 10px rgb(180, 179, 179),
-      0 0 21px rgb(204, 204, 204),
-      0 0 42px rgb(155, 27, 206),
-      0 0 82px rgb(155, 27, 206),
-      0 0 92px rgb(155, 27, 206),
-      0 0 102px rgb(155, 27, 206),
-      0 0 130px rgb(155, 27, 206);
+    0 0 2px rgb(180, 179, 179),
+    0 0 5px rgb(102, 51, 153),
+    0 0 12px rgb(119, 61, 177),
+    0 0 23px rgb(155, 27, 206);
      
   }
 
   label{
-    color: #fff;
+    color: white;
+   text-shadow:
+    0 0 2px rgb(180, 179, 179),
+    0 0 5px rgb(102, 51, 153),
+    0 0 12px rgb(119, 61, 177),
+    0 0 23px rgb(155, 27, 206);
+
+
     
-    text-shadow:
-      0 0 7px #fff,
-      0 0 10px rgb(180, 179, 179),
-      0 0 21px rgb(204, 204, 204),
-      0 0 42px rgb(155, 27, 206),
-      0 0 82px rgb(155, 27, 206),
-      0 0 92px rgb(155, 27, 206),
-      0 0 102px rgb(155, 27, 206),
-      0 0 121px rgb(155, 27, 206);
 
     }
 
@@ -60,7 +54,7 @@ textarea{
 
     
     background-color: transparent;
-    color: white;
+    color: rgb(139, 99, 179);
     border-radius: 25px;
     height: auto;
     border: 2px solid rebeccapurple;
@@ -101,12 +95,14 @@ textarea{
     
   }
 .shadow{
-    border: 1px solid #cccc;
+    border: 1px solid rebeccapurple;
+    border-radius: 35px;
     box-shadow:
-    0 0 7px #fff,
-    0 0 10px rgb(180, 179, 179),
-    0 0 42px rgb(155, 27, 206),
-    0 0 70px rgb(155, 27, 206);;
+    
+    0 0 2px rgb(180, 179, 179),
+    0 0 5px rgb(102, 51, 153),
+    0 0 22px rgb(102, 51, 153),
+    0 0 23px rgb(155, 27, 206);
     text-align: center;
 
 
@@ -149,7 +145,16 @@ fieldset{
     border: 2px solid rebeccapurple;
 }
 
+#flash-message{
+    position: fixed;
+    left: 50%;
+    top: 27.5%;
+    transform: translate(-50%,0);
 
+}
+#flash-message div{
+  text-align: center;
+}
 
 nav{
     display: flex;
@@ -235,10 +240,11 @@ grid-template-areas:
     height: 300px;
     border: 2px solid rebeccapurple; ;
     box-shadow:
-    0 0 7px #fff,
-    0 0 10px rgb(180, 179, 179),
-    0 0 42px rgb(155, 27, 206),
-    0 0 4px rgb(155, 27, 206);
+    
+    0 0 2px rgb(180, 179, 179),
+    0 0 5px rgb(102, 51, 153),
+    0 0 12px rgb(102, 51, 153),
+    0 0 13px rgb(155, 27, 206);
 
 
 

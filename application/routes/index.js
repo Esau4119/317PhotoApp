@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var isLoggedIn = require('../middleware/routeprotectors').userIsLoggedIn
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -7,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
-router.get('/home',(req,res,next) => {
+router.get('/home',isLoggedIn,(req,res,next) => {
   res.render('home', {title: 'Home'})
 })
 router.get('/login',(req,res,next) => {
@@ -17,9 +18,20 @@ router.get('/login',(req,res,next) => {
 router.get('/registration',(req,res,next) => {
   res.render('registration', {title: 'Registration',layout: 'uniLay'})
 })
-router.get('/postimage',(req,res,next) => {
+//router.use('postimage', isLoggedIn);
+router.get('/postimage',isLoggedIn,(req,res,next) => {
   res.render('postimage', {title: 'POST',layout: 'uniLay'})
 })
-router.get('/viewpost',(req,res,next) => {
+router.get('/viewpost',isLoggedIn,(req,res,next) => {
   res.render('viewpost', {title: 'ViewPost',layout: 'viewLay'})
 })
+
+
+
+
+
+
+
+
+
+

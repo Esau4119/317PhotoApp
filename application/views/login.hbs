@@ -2,7 +2,8 @@
         
         <div class = "site-content">
             
-            <form action="">
+            <form method="POST" action="/users/login"
+             enctype="application/x-www-form-urlencoded">
                 <header><h2 class ="neonText">Login</h2></header>
                 <br>
                 <fieldset class="">
@@ -12,7 +13,7 @@
                     <br>
                     <label for="">Username</label> 
                     <br/>
-                    <input class = "expand-on-focus " type="text" required>
+                    <input class = "expand-on-focus " type="text" name="username"required>
                    
         
                     <br/>
@@ -20,7 +21,7 @@
         
                     <label for="">Password</label>
                     <br/>
-                    <input class = "expand-on-focus " type="password" required>
+                    <input class = "expand-on-focus " type="password"  name="password" required>
         
                     <br/>
                     
