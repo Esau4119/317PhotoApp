@@ -1,3 +1,4 @@
+var path = require('path');
 const checkUsername = (username) => {
     /**reg explination
      * ^     ---> start of string 
@@ -18,12 +19,46 @@ const checkPassword = (password, cpassword) => {
     return passchecker.test(password) && password == cpassword;
 
 };
+const checkLoginPassword = (password) => {
+    let passchecker = /^(?=.*[0-9])(?=.*[!@#$.%^&*])[a-zA-Z0-9!@#$.%^&*]{7,15}$/;
+    return passchecker.test(password);
+
+};
+
 
 const checkEmail = (email) => {
     let emailChecker = /^\S+@\S+\.\S+$/
     return emailChecker.test(email)
 };
+const postValidator = (req, res, next) => {
+    let title = req.body.title;
+    let description  = req.body.description;
+    let fileUploaded = req.file.filename;
 
+ 
+    if (!title) {
+        req.flash('error', "Invalid Title")
+        req.session.save(err => {
+            res.redirect("/postimage")
+        });
+    } else if (!description) {
+        req.flash('error', "Invalid description");
+        req.session.save(err => {
+            res.redirect("/postimage")
+        });
+    
+    }
+     else if (!fileUploaded.includes(".png") && !fileUploaded.includes(".jpg") && !fileUploaded.includes(".jpeg") ) {
+      req.flash('error', "Invalid File")
+      req.session.save(err => {
+          res.redirect("/postimage")
+      });
+    }
+    else {
+        next();
+    }
+
+}
 
 const registerValidator = (req, res, next) => {
     let username = req.body.username;
@@ -40,12 +75,14 @@ const registerValidator = (req, res, next) => {
         req.session.save(err => {
             res.redirect("/registration")
         });
-    } else if (!checkPassword(password, cpassword)) {
+    }
+     else if (!checkPassword(password, cpassword)) {
         req.flash('error', "Invalid Password");
         req.session.save(err => {
             res.redirect("/registration")
         });
-    } else {
+    }
+     else {
         next();
     }
 
@@ -53,7 +90,25 @@ const registerValidator = (req, res, next) => {
 
 
 const loginValidator = (req, res, next) => {
+    let username = req.body.username;
+    let password = req.body.password;
+
+if (!username){
+    
+    req.flash('error', "Invalid Username")
+    req.session.save(err => {
+        res.redirect("/login")
+    });
+   
+}else if (!checkLoginPassword(password)) {
+    req.flash('error', "Invalid Password");
+    req.session.save(err => {
+        res.redirect("/login")
+    });
+} else {
+    next();
+}
 
 }
 
-module.exports = { registerValidator, loginValidator }
+module.exports = { registerValidator, loginValidator, postValidator }

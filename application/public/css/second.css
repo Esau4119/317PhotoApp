@@ -33,7 +33,8 @@ textarea{
     0 0 5px rgb(102, 51, 153),
     0 0 12px rgb(119, 61, 177),
     0 0 23px rgb(155, 27, 206);
-     
+    
+    font-family: 'Playball', cursive;
   }
 
   label{
@@ -45,7 +46,7 @@ textarea{
     0 0 23px rgb(155, 27, 206);
 
 
-    
+    font-family: 'Playball', cursive;
 
     }
 
@@ -148,8 +149,9 @@ fieldset{
 #flash-message{
     position: fixed;
     left: 50%;
-    top: 27.5%;
+    top: 22.5%;
     transform: translate(-50%,0);
+    z-index: 9999;
 
 }
 #flash-message div{
@@ -223,18 +225,52 @@ grid-template-areas:
         "content content content content content"
         ;
         }
+        .grid-container-index{
+
+            display: grid;
+            min-height: 60vh;
+            min-width: 100vh;
+            height: auto;
+            width: auto;
+            margin: 50px auto auto auto;
+            grid-template-rows: 100px auto auto auto 100px;
+            grid-template-columns:  repeat(5,1fr);
+            grid-auto-rows: auto auto auto auto;
+            grid-auto-columns: 300px;
+            gap: .25rem;
+            grid-template-areas: 
+            " header header header header header "
+            "content content content content content"
+            "content content content content content"
+            "content content content content content"
+            "footer footer footer footer footer"
+            ;
+            }
         #container-for-all-of-the-fake-api-pictures-and-titles-that-are-probrably-in-a-different-language{
             width: auto;
             margin-left: auto;
-            padding-left: 6px;
+            padding-left: 10px;
             padding-right: 8px;
             display: grid;
             gap: 12px 12px;
             justify-items: center;
             grid-template-columns: repeat(4, 300px);
             grid-template-rows: repeat(4, 250px);
-            grid-auto-columns:  300px 300px 300px 300px ;
-            grid-auto-rows: 250px 250px 250px 250px;
+            /* grid-auto-columns:  300px 300px 300px 300px ;
+            grid-auto-rows: 250px 250px 250px 250px; */
+        }
+        #container-for-recents{
+            width: auto;
+            /* margin-left: auto; */
+            /* padding-left: 160px;
+            padding-right: 8px; */
+            display: grid;
+            gap: 12px 12px;
+            justify-content: center;
+            grid-template-columns: repeat(2, 300px);
+            grid-template-rows: repeat(4, 250px);
+            /* grid-auto-columns:  200px 200px 200px 200px ;
+            grid-auto-rows: 250px 250px 250px 250px; */
         }
 .image{
     height: 300px;
@@ -280,10 +316,11 @@ grid-template-areas:
 .site-content-home{
     border: transparent;
     box-shadow: black;
-    background-color: transparentlack;
+    background-color: transparent;
     justify-content: center;
     grid-area: content;
 }
+
 .site-footer{
     color: white;
     background-color: transparent;
@@ -418,9 +455,107 @@ grid-template-areas:
 
 
 }
+.bor-index{
+    background-color: transparent;
+  
+    color: white;
+    /* border-radius: 25px; */
+    height: auto;
+    /* padding-top:  5px; */
+    width: 300px;
+    border: 2px solid rebeccapurple;
+
+
+}
 #search{
   
 text-align: center;
 
 
 }
+.fancy{
+    font-family: "Pinyon Script"; 
+    font-size: 24px; 
+    font-style: normal; 
+    font-variant: normal;
+     font-weight: 700; 
+     line-height: 26.4px;
+}
+.fancy2{
+    font-family: 'Playball', cursive;
+    font-size: 18px; 
+}
+
+.comment-container{
+    overflow-y:scroll;
+    display: flex;
+    text-align: left;
+    /* left: 36%;
+    top: 59%;
+    transform: translate(-50%,0); */
+    padding:0%;
+    margin: 5%;
+    display: block;
+    max-height: 15vh;
+    min-width: 55vh;
+    max-width: 55vh;
+    flex-flow: column-reverse nowrap;
+   
+}
+.comment-section{
+     display: grid;
+     min-height: 50px;
+     max-height: 500px;
+    background-color: transparent;
+
+    
+   
+    gap: 12px 12px;
+    justify-items: center;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-auto-rows: auto auto auto auto;
+}
+.comment{
+    
+    display: grid;
+    min-height: 50px;
+   max-height: 200px;
+    width: 90%;
+    /* padding: 2%; */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    grid-template-rows: 25px 25px 25px 25px;
+    grid-template-columns: 200px 280px;
+    grid-auto-rows: auto auto auto auto ;
+    background-color: transparent;
+    grid-template-areas: 
+    "author created"
+    "comment comment";
+
+    
+}
+.author-text{
+grid-area: author;
+}
+.date-posted{
+    justify-self: end;
+    grid-area: created;
+    }
+    .comment-text{
+        grid-area: comment;
+
+        }
+*::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: rebeccapurple;
+    border-radius: 20px;
+    border: 3px solid white;
+  }

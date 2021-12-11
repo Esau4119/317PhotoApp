@@ -1,20 +1,23 @@
-<header class="site-header">
-    <h1><a href="/" class="neonText">GLOW</a></h1>
+
+
+<header class="site-header ">
+    <h1><a href="/" class="neonText fancy">The Lounge</a></h1>
 
         <nav>
             {{#if logged}}
-            <a href="" id="logout-button" class="neonText nav-bar-border">log out</a>
-            <a href="/home" class="neonText nav-bar-border"> Home</a>
-            <a href="/postimage" class="neonText nav-bar-border">Post</a>
-            <a href="/viewpost" class="neonText nav-bar-border">Viewpost</a>
+            <a href="" id="logout-button" class="neonText fancy2 nav-bar-border">log out</a>
+            {{!-- <a href="/home" class="neonText fancy2 nav-bar-border"> Home</a> --}}
+            <a href="/postimage" class="neonText fancy2 nav-bar-border">Post</a>
+            {{!-- <a href="/viewpost" class="neonText  fancy2 nav-bar-border">Viewpost</a> --}}
             <div class="neonText nav-bar-border">
                 <input id="search" type="searchbar" placeholder="Search Here">
+              
             </div>
         </nav>
     {{else}}
         
-            <a href="/login" class="neonText nav-bar-border">Log In</a>
-            <a href="/registration" class="neonText nav-bar-border">Register</a>
+            <a href="/login" class="neonText fancy2 nav-bar-border">Log In</a>
+            <a href="/registration" class="neonText fancy2 nav-bar-border">Register</a>
         
     {{/if}}
 

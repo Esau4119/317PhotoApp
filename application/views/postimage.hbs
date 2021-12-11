@@ -1,7 +1,7 @@
 
   
         <div class = "site-content">
-            <form action="">
+            <form method = "POST"action="/posts/createPost" enctype ="multipart/form-data">
                 <header>
                     <h2 class ="neonText">Post n' The Image</h2>
                     <h4 class ="neonText">Because why not</h4>
@@ -10,20 +10,20 @@
                     
                     
                     <label for="">Post Title</label>
-                    <input class = "expand-on-focus " type="text">
+                    <input class = "expand-on-focus " type="text" name = "title">
                     
                     <br/>
                     
                     <div class="spacing"></div>
                     <label  for="">Post Discription</label>
                     <br/>
-                    <textarea placeholder="-- What is the your post about? --"rows = "5" cols = "70" ></textarea>
+                    <textarea placeholder="-- What is the your post about? --"rows = "5" cols = "70" name = "description"></textarea>
                     
                     <br/>
                     <div class="spacing"></div>
 
                     <label for="">Choose your Image</label>
-                    <input class="neonText" type="file">
+                    <input class="neonText" type="file" name = "uploadImage">
                    
                     <br/>
                     <div class="spacing"></div>
@@ -39,8 +39,8 @@
                    
                     <br/>
 
-                    <button class= "expand-on-hover neonText" neonTexttype="submit">POST</button>
-                    <button class= "expand-on-hover neonText" expand-on-hover neonTexttype="reset">Reset</button>
+                    <button class= "expand-on-hover neonText" type="submit">POST</button>
+                    <button class= "expand-on-hover neonText"  neonTexttype="reset">Reset</button>
 
                 </fieldset>
                   

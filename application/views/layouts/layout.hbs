@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    
 
-    <head>
+<head>
+
+
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type = "text/css" href="/public/css/second.css">
-    <script defer src="/public/js/fetch.js"></script> 
-     <script defer src="/public/js/validation.js"></script> 
+    <link rel="stylesheet" type="text/css" href="/public/css/second.css">
+
+    <script defer src="/public/js/validation.js"></script>
+     <script defer src="/public/js/fadeoutmessage.js"></script>
     <title>{{title}}</title>
     <link rel="icon" href="/public/favicon.ico" sizes="70x70" type="image/ico">
+   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pinyon+Script" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+
     <style>
 
 
     </style>
-</head>
   </head>
-  <body>
-    
-    <div class = "grid-container-home shadow">
-      {{!-- {{log this}} --}}
+</head>
+
+<body>
+
+  <div class="grid-container shadow">
+    {{!-- {{log this}} --}}
     {{> header}}
-   {{#if (emptyObject messages)}}
+     {{#if (emptyObject messages)}}
     {{> flashmessage}}
      {{/if}}
     {{{body}}}
+    {{> footer}}
+  </div>
 
-
-    </div>
-    
-    {{#if logged}}
+  {{#if logged}}
   <script>
     let ele = document.getElementById('logout-button')
     if (ele) {
@@ -46,5 +52,6 @@
   </script>
   {{/if}}
 
-  </body>
+</body>
+
 </html>

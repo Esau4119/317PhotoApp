@@ -93,26 +93,20 @@ async function makePostsTable(connection) {
 async function makeCommentsTable(connection) {
   const [result, _] = await connection.query(
     // Comments Table SQL Goes here
-    `CREATE TABLE IF NOT EXISTS csc317db.comments (
-      id INT NOT NULL AUTO_INCREMENT,
-      comment MEDIUMTEXT NOT NULL,
-      fk_postId INT NOT NULL,
-      fk_authorId INT NOT NULL,
+    `CREATE TABLE comments (
+      id int NOT NULL AUTO_INCREMENT,
+      comment mediumtext NOT NULL,
+      fk_postId int NOT NULL,
+      fk_authorId int NOT NULL,
+      created datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
       PRIMARY KEY (id),
-      UNIQUE INDEX id_UNIQUE (id ASC) VISIBLE,
-      INDEX comment_author_idx (fk_authorId ASC) VISIBLE,
-      INDEX comment_belongsTo_idx (fk_postId ASC) VISIBLE,
-      CONSTRAINT comment_author
-        FOREIGN KEY (fk_authorId)
-        REFERENCES csc317db.users (id)
-        ON DELETE NO ACTION
-        ON UPDATE NO ACTION,
-      CONSTRAINT comment_belongsTo
-        FOREIGN KEY (fk_postId)
-        REFERENCES csc317db.posts (id)
-        ON DELETE NO ACTION
-        ON UPDATE NO ACTION)
-    ENGINE = InnoDB;`
+      UNIQUE KEY id_UNIQUE (id),
+      KEY comment_author_idx (fk_authorId),
+      KEY comment_belongsTo_idx (fk_postId),
+      CONSTRAINT comment_author FOREIGN KEY (fk_authorId) REFERENCES users (id),
+      CONSTRAINT comment_belongsTo FOREIGN KEY (fk_postId) REFERENCES posts (id)
+    ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+    `
   );
   if (result && result.warningStatus > 0) {
     const [warningResult, _] = await connection.query("SHOW WARNINGS");

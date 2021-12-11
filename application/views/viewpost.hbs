@@ -6,14 +6,18 @@
 
 
     <section>
-        <header>
+        {{!-- <header>
             <h2 class="neonText">Post:</h2>
-        </header>
+        </header> --}}
 
-        <img class="image " src="https://c.tenor.com/jCk8c5_Q4J0AAAAS/hacker.gif" alt="Nothing here I guess">
+        <img class="image " src="/{{currentPost.photopath}}" alt="Nothing here I guess">
 
+        <br>
+        <h2 class="neonText">Description</h2>
+
+        <p class="neonText"><strong>{{currentPost.description}}</strong></p>
     </section>
-
+<button></button>
 
 </div>
 
@@ -22,37 +26,111 @@
         <header>
             <h2 class="neonText">Post Title:</h2>
         </header>
-        <p class="neonText"><strong>"Going crazy"</strong></p>
+        <p class="neonText"><strong>{{currentPost.title}}</strong></p>
     </section>
 
     <section>
         <header>
             <h2 class="neonText">Post Author:</h2>
         </header>
-        <p class="neonText"><strong>GOOGLE</strong></p>
+        <p class="neonText"><strong>{{currentPost.username}}</strong></p>
     </section>
 
     <section>
         <header>
             <h2 class="neonText">Time of creation:</h2>
         </header>
-        <p class="neonText"><strong> October 8, 2021. 7:00PM PST</strong></p>
+        <div class="neonText">
+            <span class="date-posted">
+                {{currentPost.created}}
+            </span>
+        </div>
+
+
     </section>
     <section>
-        <form>
-            <label for="">Comment</label>
-             <br />
-            <textarea placeholder="--Want to Write something--" rows="5" cols="40"></textarea>
-            <button> Submit Comment</button>
-        </form> 
-        
+
+
+        <label for="">Comment</label>
+        <br />
+        <textarea id="comment-box-text" placeholder="--Want to Write something--" rows="5" cols="40"></textarea>
+        <button style="font-size:24px"><i id="comment-box-button" class="fa fa-comments-o"></i></button>
+
+        <div class=" bor comment-container">
+            <div id="comment-section" class="comment-section">
+
+                {{#each currentPost.comments}}
+                {{> comment}}
+                {{/each}}
+            </div>
+
+        </div>
+
     </section>
 </div>
 
-<footer class="site-footer neonText">
-    <div style="height: 10px"></div>
-    End of Viewing Post Page -
-    Brought to you by a random kid that doesnt know whats going on
-    <br />
-    but now has little experience in HTML & CSS.
-</footer>
+
+
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll('span[class=date-posted]').forEach((postedDate) => {
+            postedDate.textContent = new Date(postedDate.textContent).toLocaleString();
+        });
+    });
+
+
+    function addMessage(data) {
+        let template = document.createElement('template');
+        template.innerHTML =
+            `<div id="message-${data.commentId}" class="neonText comment">
+                <strong class="author-text">@${data.username}</strong>
+                <span class="date-posted">${new Date().toLocaleString()}</span>
+                <div class="comment-text">${data.comment}</div>
+            </div>`;
+
+        document.getElementById('comment-section').firstChild.before(template.content.firstChild)
+    }
+
+    document.getElementById('comment-box-button').onclick = (event) => {
+
+        let commentText = document.getElementById('comment-box-text').value;
+
+        let postId = document.location.pathname.match(/\d+/g).map(Number)[0];
+        if (!commentText) {
+            return;
+        } else {
+
+            let fetchOptions = {
+
+                method: "POST",
+                headers: {
+                    "Content-Type": "Application/json"
+                },
+                body: JSON.stringify({
+                    comment: commentText,
+                    postId: postId
+                })
+            }
+            fetch('/comments/create', fetchOptions)
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.code == 1) {
+                        addMessage(data);
+                        
+                    } else {
+                        addFlashFromFrontEnd(data.message, data.status)
+                    }
+                })
+                .catch(err => console.log(err));
+                
+                document.getElementById('comment-box-text').value = "";
+                
+
+        }
+    }
+
+</script>
