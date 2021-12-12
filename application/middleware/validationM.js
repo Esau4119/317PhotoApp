@@ -30,6 +30,8 @@ const checkEmail = (email) => {
     let emailChecker = /^\S+@\S+\.\S+$/
     return emailChecker.test(email)
 };
+
+
 const postValidator = (req, res, next) => {
     let title = req.body.title;
     let description  = req.body.description;
