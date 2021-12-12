@@ -20,7 +20,9 @@ Please follow the instructions below and fill in the information requested when 
 # Build/Run Instructions
 
 ## Build Instructions
-1. npm install
+1. cd application
+2. npm install
+3. npm run builddb
 
 ## Run Instructions
 1. npm start
