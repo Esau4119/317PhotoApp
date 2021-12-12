@@ -29,7 +29,8 @@ router.post('/create',(req,res,next) =>{
                     status: "success",
                     message: "comment created",
                     comment: comment,
-                    username: username
+                    username: username,
+                    commentId: wasSuccsessful
                 })
         
              }else{
