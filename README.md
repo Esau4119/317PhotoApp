@@ -12,7 +12,7 @@ Please follow the instructions below and fill in the information requested when 
 |               | Information   |
 |:-------------:|:-------------:|
 | Student Name  | Esau Bojorquez Medina    |
-| Student ID    | 921207336       |
+| Student ID    | 9*******       |
 | Student Email | ebojorquezmedina@mail.sfsu.edu    |
 
 
